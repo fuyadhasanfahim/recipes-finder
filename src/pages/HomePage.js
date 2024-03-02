@@ -38,7 +38,7 @@ export default function HomePage() {
                         <img
                             src={strMealThumb}
                             alt={strMeal}
-                            className="w-full max-w-96 rounded-md"
+                            className="w-full max-w-lg rounded-md"
                         />
                         <p className="text-xl text-center mx-auto">{strMeal}</p>
                     </div>
@@ -50,7 +50,7 @@ export default function HomePage() {
     return (
         <>
             <Navbar />
-            <div className="mx-20 h-full min-h-[80vh]">
+            <div className="mx-10 h-full min-h-[80vh]">
                 <div className="w-full max-w-7xl mx-auto my-20 relative">
                     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mx-auto relative">
                         {content}
