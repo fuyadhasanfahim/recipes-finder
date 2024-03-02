@@ -12,19 +12,19 @@ export default function HomePage() {
 
     if (isLoading) {
         content = (
-            <div className="h-screen w-full mx-auto flex justify-center items-center">
+            <div className="h-full min-h-[80vh] w-full absolute flex justify-center items-center">
                 <p>Loading...</p>
             </div>
         );
     } else if (!isLoading && isError) {
         content = (
-            <div className="h-screen w-full mx-auto flex justify-center items-center">
+            <div className="h-full min-h-[80vh] w-full flex justify-center items-center">
                 <p>{error?.data}</p>
             </div>
         );
     } else if (!isLoading && !isError && meals.length === 0) {
         content = (
-            <div className="h-screen w-full mx-auto flex justify-center items-center">
+            <div className="h-full min-h-[80vh] w-full flex justify-center items-center">
                 <p>No meals found</p>
             </div>
         );
@@ -50,9 +50,9 @@ export default function HomePage() {
     return (
         <>
             <Navbar />
-            <div className="mx-20 h-auto min-h-[60vh]">
-                <div className="w-full max-w-7xl mx-auto my-20">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mx-auto">
+            <div className="mx-20 h-full min-h-[80vh]">
+                <div className="w-full max-w-7xl mx-auto my-20 relative">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mx-auto relative">
                         {content}
                     </div>
                 </div>
