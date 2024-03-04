@@ -9,7 +9,11 @@ export const apiSlice = createApi({
         getMeals: builder.query({
             query: () => `/search.php?s`,
         }),
+
+        getMeal: builder.query({
+            query: (id) => `/lookup.php?i=${id}`,
+        }),
     }),
 });
 
-export const { useGetMealsQuery } = apiSlice;
+export const { useGetMealsQuery, useGetMealQuery } = apiSlice;

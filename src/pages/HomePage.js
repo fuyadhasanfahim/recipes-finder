@@ -2,10 +2,16 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import { useGetMealsQuery } from "../features/api/apiSlice";
+import { useNavigate } from "react-router-dom";
 
 export default function HomePage() {
     const { data, isLoading, isError, error } = useGetMealsQuery();
     const { meals } = data || {};
+
+    const navigate = useNavigate();
+    const handleMeal = (id) => {
+        navigate(`/${id}`);
+    };
 
     // decide what to render
     let content = null;
@@ -33,7 +39,7 @@ export default function HomePage() {
             const { idMeal, strMeal, strMealThumb } = meal;
 
             return (
-                <div key={idMeal}>
+                <div key={idMeal} onClick={() => handleMeal(idMeal)}>
                     <div className="space-y-2 hover:scale-105 duration-300">
                         <img
                             src={strMealThumb}
